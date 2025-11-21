@@ -1,0 +1,8 @@
+Modulus(Remainder)  10%3 =  1  in Modulus Division the Remainder wil be considered as an answer
+floor Division      10//3 = 3   in floor Division the quotient will be considered as an answer
+exponentiation      2**3 = 8    exponentiation also called as power . In which the number 2 have to multiply in 3 times.
+Simple assignment  a=5       assigns 5 to variable also
+Add and assign     a += 3      same as a= a + 3
+subract and assing  a-=2    same as a= a - 2
+multiple and assign a*= 4   same as a = a * 4
+divide and assign   a/ = 2   same as a= a / 2
