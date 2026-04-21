@@ -1,23 +1,23 @@
-class Bird:
-    def __init__(self):
-        print("Bird is ready!")
+class India():
+    def capital(self):
+        print("New Delhi is the capital of India.")
+    def language(self):
+        print("Hindi is the most widely spoken language of India.")
+    def type(self):
+        print("India is a developing country.")
 
-    def whoisThis(self):
-        print("Bird")
+class USA():
+    def capital(self):
+        print("Washington, D . C. Is the capital of USA")
+    def language(self):
+        print("English is the most used language of USA")
+    def type(self):
+        print("USA is developed country")
 
-    def swim(self):
-        print("Swim.faster")
-class Penguin(Bird):
-    def __init__(self):
-        super().__init__()
-        print("penguin is ready!")
+obj_ind = India()
+obj_usa = USA()
 
-    def whoisThis(self):
-        print("penguin")
-
-    def run(self):
-        print("Run faster")
-peggy = Penguin()
-peggy.whoisThis()
-peggy.swim()
-peggy.run()
+for country in (obj_ind, obj_usa):
+        country.capital()
+        country.language()
+        country.type()
