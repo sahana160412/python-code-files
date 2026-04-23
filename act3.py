@@ -1,23 +1,22 @@
-class India():
-    def capital(self):
-        print("New Delhi is the capital of India.")
-    def language(self):
-        print("Hindi is the most widely spoken language of India.")
-    def type(self):
-        print("India is a developing country.")
-
-class USA():
-    def capital(self):
-        print("Washington, D . C. Is the capital of USA")
-    def language(self):
-        print("English is the most used language of USA")
-    def type(self):
-        print("USA is developed country")
-
-obj_ind = India()
-obj_usa = USA()
-
-for country in (obj_ind, obj_usa):
-        country.capital()
-        country.language()
-        country.type()
+import random
+class FruitQuiz:
+    def __init__(self):
+        self.fruits={'apple':'red',
+                  'orange':'orange' ,
+                  'watermelon':'green',
+                  'banana':'yellow'}
+    def quiz(self):
+        while(True):
+            fruit, color = random.choice(list(self.fruits.items()))
+            print("what is the color of{}". format(fruit))
+            user_answer = input()
+            if(user_answer.lower() == color):
+                print("correct answer")
+            else:
+                print("wrong answer")
+                option = int(input("enter 0, if u want to play again otherwise enter 1:"))
+                if (option):
+                    break
+        print("welcome to the fruit quiz")
+        fq = FruitQuiz()
+        fq.quiz()

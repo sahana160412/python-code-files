@@ -1,28 +1,20 @@
-from abc import ABC, abstractmethod
-class Animal(ABC):
-    
-    def move(self):
-        pass
-class Human(Animal):
-    def move(self):
-        print("I can walk and run")
-class Snake(Animal):
-    def move(self):
-        print("I can crawl")
-class Dog(Animal):
-    def move(self):
-        print("I can bark")
-class Lion(Animal):
-    def move(self):
-        print("I can roar")
+class flashcard:
+    def __init__(self, word, meaning):
+        self.word = word
+        self.meaning = meaning
+    def __str__(self):
+        return self.word+' ('+self.meaning+')'
+    flash = []
+    print("Welcome to flashcard application")
+    while(True):
+        word = input("enter the name you want to add to flashcard:")
+        meaning = input("enter the meaning of the word: ")
 
-R=Human()
-R.move()
-K= Snake()
-K.move()
-R=Dog()
-R.move()
-K=Lion()
-K.move()
-
+        flash.append(flashcard(word, meaning))
+        option = int(input("enter 0 , if u want to add another flashcard otherwise enter 1: "))
+        if(option):
+            break
+    print("/nYour flashcards")
+    for i in flash:
+        print(">", i)
 
