@@ -1,20 +1,49 @@
-class flashcard:
-    def __init__(self, word, meaning):
-        self.word = word
-        self.meaning = meaning
-    def __str__(self):
-        return self.word+' ('+self.meaning+')'
-    flash = []
-    print("Welcome to flashcard application")
-    while(True):
-        word = input("enter the name you want to add to flashcard:")
-        meaning = input("enter the meaning of the word: ")
+'''Write a program to create a Pygame window with an image in it. 
+Use white colour as background RGB (255, 255, 255). 
+You can use any image of your choice.'''
 
-        flash.append(flashcard(word, meaning))
-        option = int(input("enter 0 , if u want to add another flashcard otherwise enter 1: "))
-        if(option):
-            break
-    print("/nYour flashcards")
-    for i in flash:
-        print(">", i)
+import pygame
 
+# Initialize Pygame and screen dimensions
+pygame.init()
+SCREEN_WIDTH, SCREEN_HEIGHT = 500, 500
+
+# Initialize display surface and set title
+display_surface = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+pygame.display.set_caption('Adding image and background image')
+
+# Load and scale images directly
+background_image = pygame.transform.scale(
+    pygame.image.load('background.png').convert(),
+    (SCREEN_WIDTH, SCREEN_HEIGHT))
+
+penguin_image = pygame.transform.scale(
+    pygame.image.load('penguin.png').convert_alpha(), (200, 200))
+penguin_rect = penguin_image.get_rect(center=(SCREEN_WIDTH // 2,
+    SCREEN_HEIGHT // 2 - 30))
+
+# Initialize font, render text, and set text position
+text = pygame.font.Font(None, 36).render('Hello World ', True,
+    pygame.Color('black'))
+text_rect = text.get_rect(center=(SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2 + 110))
+
+def game_loop():
+    clock = pygame.time.Clock()
+    running = True
+    while running:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                running = False
+
+        display_surface.blit(background_image, (0, 0))
+        display_surface.blit(penguin_image, penguin_rect)
+        display_surface.blit(text, text_rect)
+
+        pygame.display.flip()
+
+        clock.tick(30)
+
+    pygame.quit()
+
+if __name__ == '__main__':
+    game_loop()
